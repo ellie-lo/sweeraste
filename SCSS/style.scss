@@ -1,0 +1,270 @@
+@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+
+/*global*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+$color-primary: #3F5D45;
+$color-secondary: #EAF0ED;
+
+.flex {
+    display: flex;
+}
+
+.mb {
+    margin-bottom: 30px;
+}
+
+.mt {
+    margin-top: 30px;
+}
+
+/*style*/
+
+.wrap {
+    max-width: 940px;
+    margin: 0 auto;
+    height: 100%;
+
+    .navbar {
+        height: 40px;
+        justify-content: space-between;
+        margin-top: 60px;
+
+        .img-logo {
+            vertical-align: middle;
+        }
+
+        .narbarMenu {
+            line-height: 40px;
+
+            li {
+                padding: 0 28px;
+                position: relative;
+                transition: all 0.3s;
+
+                a {
+                    font-weight: 500;
+                    color: $color-primary;
+                }
+
+                .navbarMenu-link::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 0;
+                    height: 3px;
+                    background-color: $color-primary;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                img {
+                    vertical-align: middle;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            li:hover>.navbarMenu-link::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .banner {
+        max-height: 496px;
+        overflow: hidden;
+    }
+
+    .main {
+        justify-content: space-between;
+
+        .aside {
+            width: 300px;
+            flex-direction: column;
+
+            h2 {
+                line-height: 65px;
+                font-size: 24px;
+                color: #fff;
+                text-align: center;
+                background-color: $color-primary;
+            }
+
+            li {
+                line-height: 65px;
+                text-align: center;
+                border: 1px solid $color-secondary;
+                margin: -1px 0 0 0;
+
+                a {
+                    color: $color-primary;
+                    font-size: 24px;
+                }
+            }
+
+            li:nth-child(1) {
+                background-color: $color-secondary;
+            }
+        }
+
+        .content {
+            flex-direction: column;
+
+            .product {
+                width: 640px;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+
+                .productList {
+                    margin-left: 20px;
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    .productImg {
+                        display: block;
+                        max-height: 315px;
+                        overflow: hidden;
+                    }
+
+                    .productImg::before {
+                        content: "本日精選";
+                        position: absolute;
+                        width: 36px;
+                        color: #fff;
+                        background-color: $color-primary;
+                        font-size: 20px;
+                        height: 106px;
+                        line-height: 1.2;
+                        text-align: center;
+                        left: 16px;
+                        padding: 8px 0;
+
+                    }
+
+                    .icon {
+                        display: block;
+                        width: 36px;
+                        height: 36px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 16px;
+                        top: 16px;
+                        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+                        cursor: pointer;
+                    }
+
+                    .icon::before {
+                        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/143d37deb8a19ecd8eccc806ae26acbb90fe4338/student-week1/favorite_border.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 24px 24px;
+                        position: absolute;
+                        height: 36px;
+                        width: 36px;
+                        z-index: 1;
+                        content: "";
+                    }
+
+                    .productBody {
+                        width: 300px;
+
+                        span {
+                            font-size: 20px;
+                            line-height: 56px;
+                            text-align: center;
+                            display: block;
+                            border: 1px solid $color-secondary;
+                            color: $color-primary;
+                        }
+
+                        .productBodyName {
+                            width: 173px;
+                            margin-right: -1px;
+                        }
+
+                        .productBodyPrice {
+                            width: 127px;
+                        }
+                    }
+
+                    .productPrice {
+                        line-height: 65px;
+                        background-color: $color-secondary;
+                        text-align: center;
+                        transition: all 0.3s;
+
+                        a {
+                            font-weight: 500;
+                            font-size: 24px;
+                            color: $color-primary;
+
+                        }
+                    }
+
+                    .productPrice:hover {
+                        background-color: $color-primary;
+
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .pagination {
+                justify-content: flex-end;
+                align-items: center;
+
+                .arrow {
+                    li {
+                        border: 1px solid $color-secondary;
+                        line-height: 60px;
+                        transition: all 0.3s;
+                        padding: 0 20px;
+                    }
+
+                    a {
+                        width: 20px;
+                        display: block;
+                        color: $color-primary;
+                        font-size: 20px;
+                        text-align: center;
+                    }
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        vertical-align: middle;
+                    }
+                    li:nth-child(odd){
+                        margin-left: -1px;
+                        margin-right: -1px;
+                    }
+                    .arrow-Link:hover {
+                        background-color: $color-primary;
+
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
