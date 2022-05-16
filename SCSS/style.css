@@ -96,7 +96,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .wrap .navbar .img-logo {
